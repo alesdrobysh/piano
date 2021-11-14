@@ -1,0 +1,84 @@
+:root {
+  --keyboard-width: 95vw;
+  --key-width: calc(100% / 12);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: #282c35;
+
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+
+  height: calc(var(--keyboard-width) / 12 * 4);
+  width: var(--keyboard-width);
+  justify-content: center;
+
+  margin: 10px 0;
+}
+
+.key {
+  position: relative;
+
+  width: var(--key-width);
+  height: 100%;
+
+  background-color: white;
+
+  border-radius: 0 0 calc(0.2vw + 5px) calc(0.2vw + 5px);
+
+  margin: 0 2px;
+
+  box-shadow: 1px 10px 8px 0px rgba(0, 0, 0, 0.3);
+}
+.key.sharp {
+  position: relative;
+  z-index: 1;
+
+  left: 66%;
+
+  width: 70%;
+  height: 60%;
+
+  background-color: black;
+
+  box-shadow: 1px 4px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.key.pressed {
+  box-shadow: none;
+  background-color: #e1f1ff;
+}
+
+.key.sharp.pressed {
+  box-shadow: none;
+  background-color: #002341;
+}
+
+.hint {
+  position: absolute;
+  bottom: calc(1vw + 5px);
+  width: 100%;
+  text-align: center;
+  display: none;
+  font-size: calc(1.5vw + 10px);
+}
+
+.sharp .hint {
+  color: white;
+}
+
+.show-hint .hint {
+  display: initial;
+}
