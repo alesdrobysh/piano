@@ -46,9 +46,10 @@ body {
   position: relative;
   z-index: 1;
 
-  left: 66%;
+  margin-left: calc(var(--key-width) * -0.3);
+  margin-right: calc(var(--key-width) * -0.3);
 
-  width: 70%;
+  width: calc(var(--key-width) * 0.6);
   height: 60%;
 
   background-color: black;

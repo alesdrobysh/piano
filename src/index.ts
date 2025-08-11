@@ -1,4 +1,4 @@
-import { Keyboard, KeyboardConfig } from './Keyboard';
+import { keyboard, KeyboardConfig } from './keyboard';
 
 const container = document.querySelector('.keyboard');
 
@@ -29,4 +29,4 @@ const config: KeyboardConfig = [
   { name: 'G5', frequency: 783.99, hint: '\\' },
 ];
 
-new Keyboard(config, container);
+container.appendChild(keyboard(config).render());
