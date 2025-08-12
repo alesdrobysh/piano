@@ -158,6 +158,7 @@ import { RecordingService } from './recording-service';
 import { KeyRegistryService } from './key-registry-service';
 import { keyboard, KeyboardConfig } from './keyboard';
 import { recordingControls } from './recording-controls-di';
+import { waveSelector } from './wave-selector';
 import { UiElement } from './dom';
 const serviceConfig = [
   {
@@ -184,6 +185,12 @@ const serviceConfig = [
   {
     name: 'recordingControlsFactory',
     factory: (eventBus: EventEmitter) => () => recordingControls(eventBus),
+    dependencies: ['eventBus'],
+    singleton: false
+  },
+  {
+    name: 'waveSelectorFactory',
+    factory: (eventBus: EventEmitter) => () => waveSelector(eventBus),
     dependencies: ['eventBus'],
     singleton: false
   }

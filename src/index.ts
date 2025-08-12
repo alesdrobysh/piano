@@ -35,9 +35,12 @@ const config: KeyboardConfig = [
 di.resolve('recordingService');
 const keyboardFactory = di.resolve<(config: KeyboardConfig) => UiElement>('keyboardFactory');
 const recordingControlsFactory = di.resolve<() => UiElement>('recordingControlsFactory');
+const waveSelectorFactory = di.resolve<() => UiElement>('waveSelectorFactory');
 
 const controlsElement = recordingControlsFactory();
+const waveSelectorElement = waveSelectorFactory();
 const keyboardElement = keyboardFactory(config);
 
 controlsContainer.appendChild(controlsElement.render());
+controlsContainer.appendChild(waveSelectorElement.render());
 keyboardContainer.appendChild(keyboardElement.render());

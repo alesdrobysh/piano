@@ -147,7 +147,7 @@ export class UiElement {
   }
 }
 
-const tags = 'button,div,span'.split(',');
+const tags = 'button,div,span,select,option'.split(',');
 
 type FactoryArg =
   | string
@@ -182,6 +182,6 @@ const factories: Record<string, (arg?: FactoryArg) => UiElement> = Object.fromEn
   tags.map((tag) => [tag, createFactory(tag)]),
 );
 
-export const { button, div, span } = factories;
+export const { button, div, span, select, option } = factories;
 
 export default factories;

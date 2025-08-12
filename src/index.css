@@ -17,6 +17,15 @@ body {
   margin: 0;
 }
 
+.controls-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
 .keyboard {
   display: flex;
   flex-direction: row;
