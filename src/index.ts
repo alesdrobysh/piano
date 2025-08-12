@@ -1,9 +1,12 @@
-import { keyboard, KeyboardConfig } from './keyboard';
+import type { KeyboardConfig } from './keyboard';
+import { di } from './di';
+import type { UiElement } from './dom';
 
-const container = document.querySelector('.keyboard');
+const controlsContainer = document.querySelector('.controls-container');
+const keyboardContainer = document.querySelector('.keyboard');
 
-if (!container) {
-  throw new Error('Keyboard container was not found');
+if (!keyboardContainer || !controlsContainer) {
+  throw new Error('Required containers were not found');
 }
 
 const config: KeyboardConfig = [
@@ -29,4 +32,12 @@ const config: KeyboardConfig = [
   { name: 'G5', frequency: 783.99, hint: '\\' },
 ];
 
-container.appendChild(keyboard(config).render());
+di.resolve('recordingService');
+const keyboardFactory = di.resolve<(config: KeyboardConfig) => UiElement>('keyboardFactory');
+const recordingControlsFactory = di.resolve<() => UiElement>('recordingControlsFactory');
+
+const controlsElement = recordingControlsFactory();
+const keyboardElement = keyboardFactory(config);
+
+controlsContainer.appendChild(controlsElement.render());
+keyboardContainer.appendChild(keyboardElement.render());
