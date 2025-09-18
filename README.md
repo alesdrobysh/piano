@@ -1,15 +1,26 @@
-# Piano
-A piano implemented in pure typescript.
-Live demo is [here](https://piano-ales.vercel.app/).
-## Local development
-### Dependencies
-[Node.js](https://nodejs.org/) and [yarn](https://yarnpkg.com/) are required for running the project locally. After having them installed on your computer, navigate to the project root and run the following command to install the dependencies:
+# 🎹 Piano
+
+A TypeScript piano application with loop recording, built using Web Audio API and dependency injection.
+
+[Live Demo](https://piano-ales.vercel.app/)
+
+## ✨ Features
+
+- Interactive piano keyboard with multiple input methods
+- Single-button loop recording system
+- Real-time audio synthesis
+- Touch device support
+
+## 🚀 Quick Start
+
+```bash
+yarn          # Install dependencies
+yarn start    # Start dev server (localhost:1234)
+yarn build    # Build for production
 ```
-yarn
-```
-### Running
-In the project root run the following command
-```
-yarn start
-```
-The project is now available at http://localhost:1234
+
+## 🎯 Usage
+
+- **Play**: Click keys, touch, or use keyboard
+- **Record**: Click record button to start/stop/clear loops
+- **Spacebar**: Quick recording control
